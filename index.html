@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Slug Anime</title>
+</head>
+
+<body>
+    <div class="cover">
+        
+        <div class="carousel-container">
+            <div class="carousel" id="carousel"></div>
+        </div>
+
+        <script>
+            const imageFolder = "carousel/";
+            const imageFiles = ["image1.jpg", "image2.jpg"];
+            const carousel = document.getElementById("carousel");
+
+            // Create image elements and append to carousel
+            imageFiles.forEach((image, index) => {
+                let img = document.createElement("img");
+                img.src = imageFolder + image;
+                if (index === 0) img.classList.add("active");
+                carousel.appendChild(img);
+            });
+
+            let currentIndex = 0;
+            const images = document.querySelectorAll(".carousel img");
+
+            function nextImage() {
+                images[currentIndex].classList.remove("active");
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add("active");
+            }
+
+            setInterval(nextImage, 7000); // Change image every 7 seconds
+        </script>   
+
+        <div class="card">
+            <div class="card-mari"><img src="content/Mari.png" alt="Mari"></div>
+            <div class="welcome">Welcome to the Slug Anime and Manga Association!</div>
+            <a class="button" href="discord" target="_blank">Join Our Discord!</a>
+            <a class="button" href="instagram" target="_blank">Check Out Our Instagram</a></div>
+        </div>
+        <div class="sand">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 120 1440 120">
+                <path fill="#ffe59d" d="M0,160L48,149.3C96,139,192,117,288,122.7C384,128,480,160,576,165.3C672,171,768,149,864,144C960,139,1056,149,1152,160C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="content">
+        <h2>General Meeting Times</h2>
+        <p><strong>Time:</strong> 3:00 PM - 6:00 PM</p>
+        <p><strong>Day:</strong> Every Sunday During the Quarter</p>
+        <p><strong>Location:</strong> Social Sciences 2 room 159</p>
+
+        <h2>Upcoming Event: Winter Art Festival</h2>
+        <p>Join us for our annual Winter Art Festival, where artists from our club will be showcasing their work! Boba will also be available for sale.</p>
+        <p><strong>Location:</strong> Porter Hitchcock Lounge</p>
+        <p><strong>Day:</strong> March 1, 2025</p>
+        <p><strong>Time:</strong> 1:00 PM - 5:00 PM</p>
+
+        <div class="calendar">
+            <h2>Our Events</h2>
+            <iframe src="https://calendar.google.com/calendar/embed?src=c_c41242c3e02c962dbda4d12d5f7cbe372f0d8ed768c6f99d3ee7aa6aec780d26%40group.calendar.google.com&ctz=America%2FLos_Angeles"
+                    style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <img src="content/slugheart.png" alt="Slug Heart">
+        </div>
+        <div>
+            <p>Inquiries? Contact <a href="mailto:sluganime@ucsc.edu">sluganime@ucsc.edu</a></p>
+            <p>&copy; 2025 Regents of the University of California</p>
+            <p>The Slug Anime and Manga Association is a 501(c)(3) nonprofit organization (EIN 94-1539563)</p>
+        </div>
+    </footer>
+</body>
+
+</html>
